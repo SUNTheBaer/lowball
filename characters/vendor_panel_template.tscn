@@ -1,0 +1,44 @@
+[gd_scene format=3 uid="uid://b4cmdsdhan5wh"]
+
+[ext_resource type="Texture2D" uid="uid://b2y8lo7et7f6r" path="res://assets/icon.svg" id="1_gw6ef"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_65khg"]
+viewport_path = NodePath("SubViewport")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_65khg"]
+albedo_color = Color(0.2627451, 1, 1, 1)
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_65khg"]
+
+[node name="VendorPanelTemplate" type="Panel" unique_id=2077156705]
+offset_right = 300.0
+offset_bottom = 200.0
+
+[node name="Button" type="Button" parent="." unique_id=1298604402]
+layout_mode = 0
+offset_right = 300.0
+offset_bottom = 200.0
+
+[node name="VendorSprite" type="Sprite2D" parent="." unique_id=2137204921]
+position = Vector2(88, 99)
+texture = ExtResource("1_gw6ef")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1749299312]
+layout_mode = 0
+offset_left = -34.0
+offset_top = -151.0
+offset_right = 478.0
+offset_bottom = 361.0
+texture = SubResource("ViewportTexture_65khg")
+
+[node name="SubViewport" type="SubViewport" parent="." unique_id=196198475]
+transparent_bg = true
+
+[node name="Camera3D" type="Camera3D" parent="SubViewport" unique_id=1618681532]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 7.5)
+fov = 50.0
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="SubViewport" unique_id=255591353]
+transform = Transform3D(0.873874, 0.4744609, 0.10597633, -0.38514757, 0.80868596, -0.4446216, -0.29665712, 0.3477268, 0.8894272, 0, 0, 0)
+material_override = SubResource("StandardMaterial3D_65khg")
+mesh = SubResource("CapsuleMesh_65khg")

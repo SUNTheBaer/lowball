@@ -1,28 +1,28 @@
 [gd_scene format=3 uid="uid://o3erh0y7xbcp"]
 
-[ext_resource type="PackedScene" uid="uid://b4cmdsdhan5wh" path="res://characters/vendor_button.tscn" id="1_6r5jp"]
+[ext_resource type="PackedScene" uid="uid://b4cmdsdhan5wh" path="res://characters/vendor_panel_template.tscn" id="1_6r5jp"]
 
 [node name="VendorSelect" type="Node2D" unique_id=287184111]
 
-[node name="VendorButton" parent="." unique_id=308123727 instance=ExtResource("1_6r5jp")]
+[node name="VendorPanelTemplate1" parent="." unique_id=308123727 instance=ExtResource("1_6r5jp")]
 offset_left = 200.0
 offset_top = 75.0
 offset_right = 500.0
 offset_bottom = 275.0
 
-[node name="VendorButton2" parent="." unique_id=2048795951 instance=ExtResource("1_6r5jp")]
+[node name="VendorPanelTemplate2" parent="." unique_id=2048795951 instance=ExtResource("1_6r5jp")]
 offset_left = 650.0
 offset_top = 75.0
 offset_right = 950.0
 offset_bottom = 275.0
 
-[node name="VendorButton3" parent="." unique_id=1474464993 instance=ExtResource("1_6r5jp")]
+[node name="VendorPanelTemplate3" parent="." unique_id=1474464993 instance=ExtResource("1_6r5jp")]
 offset_left = 200.0
 offset_top = 375.0
 offset_right = 500.0
 offset_bottom = 575.0
 
-[node name="VendorButton4" parent="." unique_id=1073659523 instance=ExtResource("1_6r5jp")]
+[node name="VendorPanelTemplate4" parent="." unique_id=1073659523 instance=ExtResource("1_6r5jp")]
 offset_left = 650.0
 offset_top = 375.0
 offset_right = 950.0
