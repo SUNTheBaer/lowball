@@ -1,11 +1,12 @@
 [gd_scene format=3 uid="uid://o3erh0y7xbcp"]
 
-[ext_resource type="PackedScene" uid="uid://bbpkl1j2c1hsa" path="res://characters/vendor_shopkeep.tscn" id="1_3ht5t"]
 [ext_resource type="PackedScene" uid="uid://b4cmdsdhan5wh" path="res://characters/vendor_panel_template.tscn" id="1_6r5jp"]
+[ext_resource type="Script" uid="uid://cc17j3arqu1t5" path="res://levels/vendor_select.gd" id="1_x3huo"]
 
 [node name="VendorSelect" type="Node2D" unique_id=287184111]
+script = ExtResource("1_x3huo")
 
-[node name="VendorPanelTemplate1" parent="." unique_id=2077156705 instance=ExtResource("1_3ht5t")]
+[node name="VendorPanelTemplate1" parent="." unique_id=2077156705 instance=ExtResource("1_6r5jp")]
 offset_left = 200.0
 offset_top = 75.0
 offset_right = 500.0

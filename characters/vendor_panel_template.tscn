@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://b4cmdsdhan5wh"]
 
+[ext_resource type="Script" uid="uid://bwb4pmd65qd4i" path="res://characters/vendor_panel_template.gd" id="1_dsbx6"]
 [ext_resource type="Texture2D" uid="uid://b2y8lo7et7f6r" path="res://assets/icon.svg" id="1_gw6ef"]
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_65khg"]
@@ -13,14 +14,10 @@ albedo_color = Color(0.2627451, 1, 1, 1)
 [node name="VendorPanelTemplate" type="Panel" unique_id=2077156705]
 offset_right = 300.0
 offset_bottom = 200.0
-
-[node name="Button" type="Button" parent="." unique_id=1298604402]
-layout_mode = 0
-offset_right = 300.0
-offset_bottom = 200.0
+script = ExtResource("1_dsbx6")
 
 [node name="VendorSprite" type="Sprite2D" parent="." unique_id=2137204921]
-position = Vector2(88, 99)
+position = Vector2(87, 70)
 texture = ExtResource("1_gw6ef")
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=1749299312]
@@ -42,3 +39,11 @@ fov = 50.0
 transform = Transform3D(0.873874, 0.4744609, 0.10597633, -0.38514757, 0.80868596, -0.4446216, -0.29665712, 0.3477268, 0.8894272, 0, 0, 0)
 material_override = SubResource("StandardMaterial3D_65khg")
 mesh = SubResource("CapsuleMesh_65khg")
+
+[node name="Button" type="Button" parent="." unique_id=1298604402]
+visibility_layer = 0
+layout_mode = 0
+offset_right = 300.0
+offset_bottom = 200.0
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

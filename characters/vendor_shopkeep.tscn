@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://bbpkl1j2c1hsa"]
 
-[ext_resource type="Texture2D" uid="uid://daqvf0jiu7ojl" path="res://assets/Shopkeeper.png" id="1_8m41w"]
+[ext_resource type="Texture2D" uid="uid://daqvf0jiu7ojl" path="res://assets/vendors/shopkeeper.png" id="1_8m41w"]
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_65khg"]
 viewport_path = NodePath("SubViewport")
