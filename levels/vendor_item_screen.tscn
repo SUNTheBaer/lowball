@@ -1,3 +1,19 @@
 [gd_scene format=3 uid="uid://c7fx1xd2ylt2a"]
 
-[node name="VendorItemScreen" type="Node2D" unique_id=1170594701]
+[ext_resource type="PackedScene" uid="uid://daermx8fh4rei" path="res://levels/market_item/market_item.tscn" id="1_gbbtq"]
+
+[node name="VendorItemScreen" type="Control" unique_id=771593342]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarketItem" parent="." unique_id=1652717039 instance=ExtResource("1_gbbtq")]
+layout_mode = 1
+anchors_preset = -1
+offset_left = 95.0
+offset_top = 64.0
+offset_right = -680.0
+offset_bottom = -242.0

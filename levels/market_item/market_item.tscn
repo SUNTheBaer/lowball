@@ -1,0 +1,61 @@
+[gd_scene format=3 uid="uid://daermx8fh4rei"]
+
+[ext_resource type="Script" uid="uid://cnu5xi35ycdqi" path="res://levels/market_item/product_mesh.gd" id="1_78y5j"]
+[ext_resource type="Script" uid="uid://bnhhkosofls6f" path="res://levels/market_item/sub_viewport.gd" id="1_rd50n"]
+[ext_resource type="Script" uid="uid://btr2aspj1o60d" path="res://levels/market_item/market_item.gd" id="2_nfc5r"]
+[ext_resource type="Script" uid="uid://cllgctdv530uj" path="res://levels/market_item/market_item_animation_component.gd" id="4_nfc5r"]
+
+[sub_resource type="TorusMesh" id="TorusMesh_qoe8i"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nfc5r"]
+diffuse_mode = 3
+
+[node name="MarketItem" type="Control" unique_id=1652717039]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("2_nfc5r")
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="." unique_id=5959890]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 8
+size_flags_vertical = 4
+stretch = true
+
+[node name="SubViewport" type="SubViewport" parent="SubViewportContainer" unique_id=74852308]
+transparent_bg = true
+handle_input_locally = false
+size = Vector2i(1152, 648)
+render_target_update_mode = 4
+script = ExtResource("1_rd50n")
+
+[node name="MarketItemObject" type="Node3D" parent="SubViewportContainer/SubViewport" unique_id=111538445]
+
+[node name="ProductMesh" type="MeshInstance3D" parent="SubViewportContainer/SubViewport/MarketItemObject" unique_id=1958873194]
+transform = Transform3D(-0.045767725, -0.034364626, -0.9983609, -0.9989518, 0.00073474646, 0.04576952, -0.0008393228, 0.99940914, -0.03436223, 0, 0, 0)
+mesh = SubResource("TorusMesh_qoe8i")
+surface_material_override/0 = SubResource("StandardMaterial3D_nfc5r")
+script = ExtResource("1_78y5j")
+
+[node name="Camera3D" type="Camera3D" parent="SubViewportContainer/SubViewport/MarketItemObject" unique_id=1976330360]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.9648061)
+current = true
+
+[node name="SpotLight3D" type="SpotLight3D" parent="SubViewportContainer/SubViewport/MarketItemObject" unique_id=1667011746]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3)
+light_energy = 2.515
+spot_range = 4.0
+
+[node name="MarketItemAnimationComponent" type="Node" parent="." unique_id=2000247434]
+script = ExtResource("4_nfc5r")
+hover_scale = Vector2(1.2, 1.2)
+hover_time = 0.25
+transition_type = 1
