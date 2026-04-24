@@ -1,6 +1,5 @@
 extends SubViewport
 
-@onready var animation_player: AnimationPlayer = $"../../AnimationPlayer"
 @onready var market_item_object: Node3D = $MarketItemObject
 
 var expanded = false
