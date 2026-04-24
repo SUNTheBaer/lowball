@@ -2,13 +2,17 @@ class_name MarketItemAnimationComponent extends Node
 
 @export var from_center: bool = true
 @export var hover_scale: Vector2 = Vector2(1,1)
-@export var hover_time: float = 0.1
+@export var final_transparency: float = 0.176
+@export var hover_time: float = 0.25
+@export var initial_modulate_time : float = 0.25
+@export var escape_modulate_time : float = 0.25
 @export var zoom_time: float = 0.5
 @export var transition_type: Tween.TransitionType
 @export var ease_type : Tween.EaseType = Tween.EASE_OUT
 
 var target : Control
 var target_child : Control
+var background : Control
 var default_scale : Vector2
 var default_target_z_index : int
 var default_target_child_z_index : int
@@ -24,6 +28,7 @@ var expanded : bool = false
 func _ready() -> void:
 	target = get_parent()
 	target_child = get_parent().get_node("SubViewportContainer")
+	background = get_parent().get_node("Background")
 	
 	connect_signals()
 	call_deferred("setup")
@@ -69,7 +74,26 @@ func on_click() -> void:
 	zoom_tween(tween, target, offsets, [0.0, 0.0, 0.0, 0.0])
 	zoom_tween(tween, target_child, offsets, [0.0, 0.0, 0.0, 0.0])
 	
+	await tween.finished
+	
+	var translucent_tween = get_tree().create_tween().set_parallel(true)
+	
+	# Make background appear
+	var translucent = Color(0.0, 0.0, 0.0, final_transparency)
+	modulate_tween(translucent_tween, translucent, initial_modulate_time)
+	
+	await translucent_tween.finished
+	
 func on_escape() -> void:
+	
+	var invis_tween = get_tree().create_tween().set_parallel(true)
+	
+	# Make background disappear
+	var invisible  = Color(0.0, 0.0, 0.0, 0)
+	modulate_tween(invis_tween, invisible, escape_modulate_time)
+	
+	await invis_tween.finished
+	
 	var tween = get_tree().create_tween().set_parallel(true)
 	
 	# Set anchors to default values
@@ -91,6 +115,9 @@ func hover_tween(scale):
 	var tween = get_tree().create_tween()
 	tween.tween_property(target, "scale", scale, hover_time).set_trans(transition_type).set_ease(ease_type)
 	await tween.finished
+	
+func modulate_tween(tween, color, time):
+	tween.tween_property(background, "modulate", color, time).set_trans(transition_type).set_ease(ease_type)
 	
 func zoom_tween(tween : Tween, target_node, properties, points : Array[float]) -> void:
 	for i in range(4):
