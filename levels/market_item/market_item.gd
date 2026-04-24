@@ -8,3 +8,4 @@ func _ready() -> void:
 	sub_viewport.market_item_clicked.connect(market_item_animation_component.on_click)
 	sub_viewport.market_item_escaped.connect(market_item_animation_component.on_escape)
 	
+ 
