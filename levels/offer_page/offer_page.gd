@@ -3,14 +3,16 @@ extends Control
 var vendor_texture = null
 var vendor_sprites = []
 
+var base_price = 0
+var counteroffer_price = 0
+var mistake_count = 0
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	load_vendor_sprites()
 	%VendorTexture.set_texture(vendor_sprites.pick_random())
 	
 	#TODO
-	#Ensure same vendor doesn't get selected twice
-	#Change name of node so that scene_switcher can use node name for parameter
 	#Populate items randomly
 
 func load_vendor_sprites():
@@ -36,3 +38,11 @@ func load_vendor_sprites():
 		var image = Image.load_from_file(sprite_path)
 		var texture = ImageTexture.create_from_image(image)
 		vendor_sprites.append(texture)
+
+func _on_offer_button_pressed() -> void:
+	Main.offer_accepted(base_price, counteroffer_price, mistake_count)
+	self._ready()
+
+func _on_leave_button_pressed() -> void:
+	Main.offer_rejected(mistake_count)
+	self._ready()
