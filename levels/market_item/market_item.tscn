@@ -81,4 +81,5 @@ spot_range = 4.0
 [node name="MarketItemAnimationComponent" type="Node" parent="." unique_id=2000247434]
 script = ExtResource("4_nfc5r")
 hover_scale = Vector2(1.2, 1.2)
+final_transparency = 0.4
 transition_type = 1
