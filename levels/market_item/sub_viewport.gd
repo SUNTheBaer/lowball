@@ -11,10 +11,10 @@ func _input(event):
 		if event.is_pressed() and expanded == false:
 				market_item_clicked.emit()
 				expanded = true
-				market_item_object.get_node("ProductMesh").expanded = true
+				market_item_object.get_child(0).expanded = true
 	
 	if event.is_action_pressed("escape"):
 		market_item_escaped.emit()
-		market_item_object.get_node("ProductMesh").reset_rotation()
+		market_item_object.get_child(0).reset_rotation()
 		expanded = false
-		market_item_object.get_node("ProductMesh").expanded = false
+		market_item_object.get_child(0).expanded = false
