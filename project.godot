@@ -41,3 +41,4 @@ escape={
 
 textures/canvas_textures/default_texture_filter=0
 rendering_device/driver.windows="d3d12"
+anti_aliasing/quality/screen_space_aa=1

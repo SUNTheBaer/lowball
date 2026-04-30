@@ -1,4 +1,4 @@
-extends MeshInstance3D
+extends Node3D
 
 var rotating = false
 var expanded = false : set = _set_expanded, get = _get_expanded
@@ -18,10 +18,10 @@ func _input(event):
 				
 		if event is InputEventMouseMotion and rotating:		
 			var delta = get_process_delta_time()
-			var rel = event.relative
+			var rel = event.relative 
 			
 			rotate_y(rel.x * .7 * delta)
-			rotate_z(rel.y * .7 * delta)
+			rotate_x(rel.y * .7 * delta)
 
 func _set_expanded(status):
 	expanded = status
