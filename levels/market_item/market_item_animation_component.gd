@@ -57,6 +57,8 @@ func off_hover() -> void:
 		hover_tween(default_scale)
 	
 func on_click() -> void:
+	$"../../Form".set_visible(true)
+	
 	await off_hover()
 	
 	expanded = true
@@ -79,12 +81,13 @@ func on_click() -> void:
 	var translucent_tween = get_tree().create_tween().set_parallel(true)
 	
 	# Make background appear
-	var translucent = Color(0.0, 0.0, 0.0, final_transparency)
+	var translucent = Color.GOLDENROD
 	modulate_tween(translucent_tween, translucent, initial_modulate_time)
 	
 	await translucent_tween.finished
 	
 func on_escape() -> void:
+	$"../../Form".set_visible(false)
 	
 	var invis_tween = get_tree().create_tween().set_parallel(true)
 	

@@ -1,0 +1,64 @@
+[gd_scene format=3 uid="uid://dcxayccymhf17"]
+
+[ext_resource type="Script" uid="uid://cfhgm0urvgj5x" path="res://levels/form/form.gd" id="1_ktcs5"]
+[ext_resource type="PackedScene" uid="uid://jf60h1mywl7c" path="res://levels/form/defect_select.tscn" id="2_nyj37"]
+
+[sub_resource type="GDScript" id="GDScript_nyj37"]
+script/source = "extends VBoxContainer
+
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	pass
+"
+
+[node name="Form" type="VBoxContainer" unique_id=402775674]
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_ktcs5")
+MAX_PAGE_COUNT = 2
+
+[node name="Label" type="Label" parent="." unique_id=2089421122]
+layout_mode = 2
+text = "Defects"
+horizontal_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=1563540037]
+layout_mode = 2
+
+[node name="PageBack" type="Button" parent="HBoxContainer" unique_id=1154004674]
+layout_mode = 2
+text = "<<<"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer" unique_id=1492729546]
+layout_mode = 2
+script = SubResource("GDScript_nyj37")
+
+[node name="DefectSelect" parent="HBoxContainer/VBoxContainer" unique_id=1548149130 instance=ExtResource("2_nyj37")]
+layout_mode = 2
+defect_values = ["Cracked", "Broken", "Missing"]
+
+[node name="DefectSelect2" parent="HBoxContainer/VBoxContainer" unique_id=1568865873 instance=ExtResource("2_nyj37")]
+layout_mode = 2
+defect_values = ["Ripped", "Water Damage", "Rust"]
+
+[node name="DefectSelect3" parent="HBoxContainer/VBoxContainer" unique_id=250183510 instance=ExtResource("2_nyj37")]
+layout_mode = 2
+defect_values = ["Discolored", "Offbrand", "Burned"]
+
+[node name="DefectSelect4" parent="HBoxContainer/VBoxContainer" unique_id=1217703704 instance=ExtResource("2_nyj37")]
+layout_mode = 2
+defect_values = ["Bloody", "Slimed"]
+
+[node name="PageForward" type="Button" parent="HBoxContainer" unique_id=1181325412]
+layout_mode = 2
+text = ">>>"
+
+[connection signal="pressed" from="HBoxContainer/PageBack" to="." method="_on_page_back_pressed"]
+[connection signal="pressed" from="HBoxContainer/PageForward" to="." method="_on_page_forward_pressed"]
