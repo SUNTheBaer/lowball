@@ -6,7 +6,7 @@ extends Control
 @onready var product_mesh: Node3D = $SubViewportContainer/SubViewport/MarketItemObject/ProductMesh
 @onready var placeholder: MeshInstance3D = $SubViewportContainer/SubViewport/MarketItemObject/ProductMesh/Placeholder
 
-var model_scene = preload("res://assets/items/Springy Boy Blue.glb")
+var model_scene = null
 var market_item_paths = []
 
 # Called when the node enters the scene tree for the first time.
@@ -27,7 +27,14 @@ func display_model():
 	
 func randomize_model():
 	var random_item = market_item_paths.pick_random()
-	print("Market Item Loaded: %s" % random_item)
+	# Using file name to retrieve defects for that item
+	# Split by directory, selecting last element (file name)
+	# Split again to remove file extension
+	# Split again into model name and defects and pop name
+	var model_defects = random_item.split("//")[-1].split(".")[0].split("_")
+	var model_name = model_defects[0]
+	model_defects.remove_at(0)
+	Main.set_model(model_name, model_defects)
 	model_scene = load(random_item)
 	
 # TODO : Stole this from Will, need to refactor this into a helper function for re-usability and redundancy reasons

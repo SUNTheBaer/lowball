@@ -10,6 +10,7 @@ var current_gui_scene
 
 var mistakes = 0
 var savings = 0
+var current_model = ""
 var current_defects = []
 
 func _ready() -> void:
@@ -30,3 +31,7 @@ func defect_selected(defect: String, toggled_on: bool):
 	elif not toggled_on and defect in current_defects:
 		current_defects.erase(defect)
 	print(current_defects)
+
+func set_model(model_name, model_defects):
+	current_model = model_name
+	current_defects = model_defects
