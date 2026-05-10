@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://jf60h1mywl7c"]
+
+[ext_resource type="Script" uid="uid://dn20bmiroveph" path="res://scenes/form/defect_select.gd" id="1_65k2b"]
+
+[node name="DefectSelect" type="HBoxContainer" unique_id=1548149130]
+script = ExtResource("1_65k2b")
+
+[node name="CheckButton" type="CheckButton" parent="." unique_id=1920588827]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="Label" type="Label" parent="." unique_id=1537025017]
+unique_name_in_owner = true
+layout_mode = 2
+text = "[Insert Defect]"
+
+[connection signal="toggled" from="CheckButton" to="." method="_on_check_button_toggled"]

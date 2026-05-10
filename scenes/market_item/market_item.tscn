@@ -1,0 +1,83 @@
+[gd_scene format=3 uid="uid://daermx8fh4rei"]
+
+[ext_resource type="Script" uid="uid://cnu5xi35ycdqi" path="res://scenes/market_item/product_mesh.gd" id="1_78y5j"]
+[ext_resource type="Script" uid="uid://bnhhkosofls6f" path="res://scenes/market_item/sub_viewport.gd" id="1_rd50n"]
+[ext_resource type="Script" uid="uid://btr2aspj1o60d" path="res://scenes/market_item/market_item.gd" id="2_nfc5r"]
+[ext_resource type="Script" uid="uid://cllgctdv530uj" path="res://scenes/market_item/market_item_animation_component.gd" id="4_nfc5r"]
+
+[sub_resource type="GDScript" id="GDScript_w45v0"]
+script/source = "extends ColorRect
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	#modulate = Color(0.0, 0.0, 0.0, 0.176)
+	modulate = Color(0.0, 0.0, 0.0, 0)
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	pass
+"
+
+[sub_resource type="BoxMesh" id="BoxMesh_w45v0"]
+
+[node name="MarketItem" type="Control" unique_id=1652717039]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("2_nfc5r")
+
+[node name="Background" type="ColorRect" parent="." unique_id=1812552244]
+modulate = Color(0, 0, 0, 0)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = SubResource("GDScript_w45v0")
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="." unique_id=5959890]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 8
+size_flags_vertical = 4
+stretch = true
+
+[node name="SubViewport" type="SubViewport" parent="SubViewportContainer" unique_id=74852308]
+transparent_bg = true
+handle_input_locally = false
+size = Vector2i(1280, 720)
+render_target_update_mode = 4
+script = ExtResource("1_rd50n")
+
+[node name="MarketItemObject" type="Node3D" parent="SubViewportContainer/SubViewport" unique_id=111538445]
+
+[node name="ProductMesh" type="Node3D" parent="SubViewportContainer/SubViewport/MarketItemObject" unique_id=2000722247]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.010656118)
+script = ExtResource("1_78y5j")
+
+[node name="Placeholder" type="MeshInstance3D" parent="SubViewportContainer/SubViewport/MarketItemObject/ProductMesh" unique_id=631935711]
+mesh = SubResource("BoxMesh_w45v0")
+
+[node name="Camera3D" type="Camera3D" parent="SubViewportContainer/SubViewport/MarketItemObject" unique_id=1976330360]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.9648061)
+current = true
+
+[node name="SpotLight3D" type="SpotLight3D" parent="SubViewportContainer/SubViewport/MarketItemObject" unique_id=1667011746]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3)
+light_energy = 2.515
+spot_range = 4.0
+
+[node name="MarketItemAnimationComponent" type="Node" parent="." unique_id=2000247434]
+script = ExtResource("4_nfc5r")
+hover_scale = Vector2(1.2, 1.2)
+final_transparency = 1.0
+transition_type = 1
