@@ -16,7 +16,7 @@ func page_change(page_number):
 	else:
 		set_visible(false)
 	
-	if %Label.text in Main.current_defects:
+	if %Label.text in Main.selected_defects:
 		%CheckButton.set_pressed_no_signal(true)
 	else:
 		%CheckButton.set_pressed_no_signal(false)

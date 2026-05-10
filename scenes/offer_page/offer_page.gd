@@ -7,13 +7,19 @@ var base_price = 0
 var counteroffer_price = 0
 var mistake_count = 0
 
+var pricing_dictionary = {
+	"Monster": 30,
+	"BrownBear": 25,
+	"SpringyBoyBlue": 40
+}
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	load_vendor_sprites()
 	%VendorTexture.set_texture(vendor_sprites.pick_random())
-	
-	#TODO
-	#Populate items randomly
+	var base_price_modifier = randf_range(0.8, 1.2)
+	base_price = pricing_dictionary[Main.model_name] * base_price_modifier
+	%ItemCost.text = "$%.2f" % base_price
 
 func load_vendor_sprites():
 	var vendor_sprite_paths = []

@@ -1,9 +1,9 @@
 [gd_scene format=3 uid="uid://daermx8fh4rei"]
 
-[ext_resource type="Script" uid="uid://cnu5xi35ycdqi" path="res://levels/market_item/product_mesh.gd" id="1_78y5j"]
-[ext_resource type="Script" uid="uid://bnhhkosofls6f" path="res://levels/market_item/sub_viewport.gd" id="1_rd50n"]
-[ext_resource type="Script" uid="uid://btr2aspj1o60d" path="res://levels/market_item/market_item.gd" id="2_nfc5r"]
-[ext_resource type="Script" uid="uid://cllgctdv530uj" path="res://levels/market_item/market_item_animation_component.gd" id="4_nfc5r"]
+[ext_resource type="Script" uid="uid://cnu5xi35ycdqi" path="res://scenes/market_item/product_mesh.gd" id="1_78y5j"]
+[ext_resource type="Script" uid="uid://bnhhkosofls6f" path="res://scenes/market_item/sub_viewport.gd" id="1_rd50n"]
+[ext_resource type="Script" uid="uid://btr2aspj1o60d" path="res://scenes/market_item/market_item.gd" id="2_nfc5r"]
+[ext_resource type="Script" uid="uid://cllgctdv530uj" path="res://scenes/market_item/market_item_animation_component.gd" id="4_nfc5r"]
 
 [sub_resource type="GDScript" id="GDScript_w45v0"]
 script/source = "extends ColorRect

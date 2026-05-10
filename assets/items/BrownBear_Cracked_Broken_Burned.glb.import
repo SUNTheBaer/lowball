@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://dm6ikow75svtr"
-path="res://.godot/imported/BrownBear_Cracked_Broken_Burned_.glb-97b3e234e0f770c0ef7cda798861d932.scn"
+path="res://.godot/imported/BrownBear_Cracked_Broken_Burned.glb-e4f6c6e5de868fa1c01b8da2fd48abc8.scn"
 
 [deps]
 
-source_file="res://assets/items/BrownBear_Cracked_Broken_Burned_.glb"
-dest_files=["res://.godot/imported/BrownBear_Cracked_Broken_Burned_.glb-97b3e234e0f770c0ef7cda798861d932.scn"]
+source_file="res://assets/items/BrownBear_Cracked_Broken_Burned.glb"
+dest_files=["res://.godot/imported/BrownBear_Cracked_Broken_Burned.glb-e4f6c6e5de868fa1c01b8da2fd48abc8.scn"]
 
 [params]
 

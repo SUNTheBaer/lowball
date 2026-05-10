@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://clt2q111mqvil"
-path="res://.godot/imported/ShopkeeperWhite.png-1c83fa867474cfe66421e6cdc0d4d221.ctex"
+uid="uid://oeu6qbb3veh5"
+path="res://.godot/imported/MuffinManPFP.png-7312b5cc1c5300fce30394b0667a2ef0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/vendors/ShopkeeperWhite.png"
-dest_files=["res://.godot/imported/ShopkeeperWhite.png-1c83fa867474cfe66421e6cdc0d4d221.ctex"]
+source_file="res://assets/vendors/MuffinManPFP.png"
+dest_files=["res://.godot/imported/MuffinManPFP.png-7312b5cc1c5300fce30394b0667a2ef0.ctex"]
 
 [params]
 
@@ -37,4 +37,4 @@ process/normal_map_invert_y=false
 process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
-detect_3d/compress_to=1
+detect_3d/compress_to=0

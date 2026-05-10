@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b5hgk5a0t1a6v"
-path="res://.godot/imported/ShopkeeperYellow.png-15267bc42c181f7d7a1b4acb56c69c39.ctex"
+uid="uid://dqxhsjfgxe26k"
+path="res://.godot/imported/BaermyPFP.png-273d71f0437e8fc0be7eebd164747b53.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/vendors/ShopkeeperYellow.png"
-dest_files=["res://.godot/imported/ShopkeeperYellow.png-15267bc42c181f7d7a1b4acb56c69c39.ctex"]
+source_file="res://assets/vendors/BaermyPFP.png"
+dest_files=["res://.godot/imported/BaermyPFP.png-273d71f0437e8fc0be7eebd164747b53.ctex"]
 
 [params]
 
@@ -37,4 +37,4 @@ process/normal_map_invert_y=false
 process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
-detect_3d/compress_to=1
+detect_3d/compress_to=0

@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://dcxayccymhf17"]
 
-[ext_resource type="Script" uid="uid://cfhgm0urvgj5x" path="res://levels/form/form.gd" id="1_ktcs5"]
-[ext_resource type="PackedScene" uid="uid://jf60h1mywl7c" path="res://levels/form/defect_select.tscn" id="2_nyj37"]
+[ext_resource type="Script" uid="uid://cfhgm0urvgj5x" path="res://scenes/form/form.gd" id="1_ktcs5"]
+[ext_resource type="PackedScene" uid="uid://jf60h1mywl7c" path="res://scenes/form/defect_select.tscn" id="2_nyj37"]
 
 [sub_resource type="GDScript" id="GDScript_nyj37"]
 script/source = "extends VBoxContainer
