@@ -10,6 +10,7 @@ var current_gui_scene
 
 signal model_loaded
 
+var player_name = "Will"
 var mistake_count = 0
 var savings = 0
 var model_name = ""

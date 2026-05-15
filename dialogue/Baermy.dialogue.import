@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://bb7tcp4vvqixe"
+path="res://.godot/imported/Baermy.dialogue-35a340541473b2b4d19e7f7a8adff2c2.tres"
+
+[deps]
+
+source_file="res://dialogue/Baermy.dialogue"
+dest_files=["res://.godot/imported/Baermy.dialogue-35a340541473b2b4d19e7f7a8adff2c2.tres"]
+
+[params]
+
+defaults=true

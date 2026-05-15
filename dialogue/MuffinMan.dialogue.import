@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://baqlm4w7vgglm"
+path="res://.godot/imported/MuffinMan.dialogue-652826f3d9f57fbdc6e33fd87ee4acd6.tres"
+
+[deps]
+
+source_file="res://dialogue/MuffinMan.dialogue"
+dest_files=["res://.godot/imported/MuffinMan.dialogue-652826f3d9f57fbdc6e33fd87ee4acd6.tres"]
+
+[params]
+
+defaults=true
