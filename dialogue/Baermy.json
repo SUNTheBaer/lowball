@@ -1,0 +1,19 @@
+{
+	"start": {
+		"speaker": "Baermy",
+		"text": "Here's my [object], I hope you like it!",
+		"next_id": "player_response"
+	},
+	"player_response": {
+		"speaker": "[player_name]",
+		"text": "Cool! Let me check it out"
+	},
+	"offered": {
+		"speaker": "Baermy",
+		"text": "Hope you enjoy XD"
+	},
+	"rejected": {
+		"speaker": "Baermy",
+		"text": "You suck >_>"
+	}
+}

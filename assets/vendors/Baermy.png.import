@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dqxhsjfgxe26k"
-path="res://.godot/imported/BaermyPFP.png-273d71f0437e8fc0be7eebd164747b53.ctex"
+path="res://.godot/imported/Baermy.png-abfeff61ee231217e74ca6ef96da617c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/vendors/BaermyPFP.png"
-dest_files=["res://.godot/imported/BaermyPFP.png-273d71f0437e8fc0be7eebd164747b53.ctex"]
+source_file="res://assets/vendors/Baermy.png"
+dest_files=["res://.godot/imported/Baermy.png-abfeff61ee231217e74ca6ef96da617c.ctex"]
 
 [params]
 

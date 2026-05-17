@@ -21,7 +21,7 @@ func _on_page_forward_pressed() -> void:
 			page_back.set_visible(true)
 		elif page_count == MAX_PAGE_COUNT:
 			page_forward.set_visible(false)
-		change_defects()
+		_change_defects()
 
 func _on_page_back_pressed() -> void:
 	if page_count >= 1:
@@ -30,8 +30,11 @@ func _on_page_back_pressed() -> void:
 			page_back.set_visible(false)
 		elif page_count == MAX_PAGE_COUNT - 1:
 			page_forward.set_visible(true)
-		change_defects()
+		_change_defects()
 
-func change_defects():
+func _change_defects():
 	for defect_select in defect_selects:
 			defect_select.page_change(page_count)
+
+#func set_visibility(visible: bool):
+	#self.set_visibility(visible)
