@@ -10,6 +10,8 @@ class_name MarketItemAnimationComponent extends Node
 @export var transition_type: Tween.TransitionType
 @export var ease_type : Tween.EaseType = Tween.EASE_OUT
 
+signal transition_done
+
 var target : Control
 var target_child : Control
 var background : Control
@@ -56,9 +58,7 @@ func off_hover() -> void:
 	if !expanded:
 		hover_tween(default_scale)
 	
-func on_click() -> void:
-	$"../../Form".set_visible(true)
-	
+func on_click() -> void:	
 	await off_hover()
 	
 	expanded = true
@@ -85,6 +85,8 @@ func on_click() -> void:
 	modulate_tween(translucent_tween, translucent, initial_modulate_time)
 	
 	await translucent_tween.finished
+	
+	transition_done.emit()
 	
 func on_escape() -> void:
 	$"../../Form".set_visible(false)

@@ -5,7 +5,9 @@
 [ext_resource type="Texture2D" uid="uid://dsudy7spfvi6i" path="res://assets/ui/Logo.png" id="2_qkda8"]
 [ext_resource type="Texture2D" uid="uid://dqxhsjfgxe26k" path="res://assets/vendors/Baermy.png" id="4_trw60"]
 [ext_resource type="PackedScene" uid="uid://dcxayccymhf17" path="res://scenes/form/form.tscn" id="5_trw60"]
-[ext_resource type="PackedScene" uid="uid://cflogxo7jjkom" path="res://scenes/chat_box/balloon.tscn" id="6_lohwo"]
+[ext_resource type="PackedScene" uid="uid://cv2e1b0i68vkb" path="res://scenes/chat_box/chat_box.tscn" id="6_lohwo"]
+
+[sub_resource type="Theme" id="Theme_lohwo"]
 
 [node name="OfferPage" type="Control" unique_id=1528025731]
 layout_mode = 3
@@ -38,7 +40,6 @@ scale = Vector2(0.4, 0.4)
 texture = ExtResource("2_qkda8")
 
 [node name="VendorTexture" type="TextureRect" parent="." unique_id=934923940]
-unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0
@@ -49,18 +50,57 @@ grow_vertical = 0
 texture = ExtResource("4_trw60")
 
 [node name="ItemCost" type="Label" parent="." unique_id=463221299]
-unique_name_in_owner = true
 layout_mode = 1
-anchors_preset = 12
+anchors_preset = 7
+anchor_left = 0.5
 anchor_top = 1.0
-anchor_right = 1.0
+anchor_right = 0.5
 anchor_bottom = 1.0
-offset_top = -165.0
+offset_left = -77.0
+offset_top = -124.0
+offset_right = 77.0
 grow_horizontal = 2
 grow_vertical = 0
 theme_override_colors/font_color = Color(0.14509805, 0.53333336, 0.19607843, 1)
-theme_override_font_sizes/font_size = 120
-text = "$50"
+theme_override_font_sizes/font_size = 90
+text = "$55.55"
+horizontal_alignment = 1
+
+[node name="ItemCounteroffer" type="Control" parent="." unique_id=943303842]
+visible = false
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -141.0
+offset_top = -124.0
+offset_right = 141.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="Panel" type="Panel" parent="ItemCounteroffer" unique_id=1868693155]
+layout_mode = 0
+offset_right = 282.0
+offset_bottom = 124.0
+theme = SubResource("Theme_lohwo")
+
+[node name="ItemCounterofferLabel" type="Label" parent="ItemCounteroffer" unique_id=1003306019]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -77.0
+offset_top = -124.0
+offset_right = 77.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_color = Color(0.14509805, 0.53333336, 0.19607843, 1)
+theme_override_font_sizes/font_size = 90
+text = "$55.55"
 horizontal_alignment = 1
 
 [node name="SpreeCount" type="Label" parent="." unique_id=1486404248]
@@ -127,9 +167,17 @@ grow_vertical = 2
 theme_override_font_sizes/font_size = 80
 text = "Leave"
 
-[node name="ExampleBalloon" parent="." unique_id=1434168376 instance=ExtResource("6_lohwo")]
-layer = 0
-will_block_other_input = true
+[node name="ChatBox" parent="." unique_id=218200653 instance=ExtResource("6_lohwo")]
+layout_mode = 1
+anchor_left = 0.71500003
+anchor_top = 0.035
+anchor_right = 0.96900004
+anchor_bottom = 0.521
+offset_left = -0.20007324
+offset_top = -0.20000076
+offset_right = -0.32006836
+offset_bottom = -0.120025635
+grow_horizontal = 0
 
 [node name="Form" parent="." unique_id=402775674 instance=ExtResource("5_trw60")]
 visible = false
@@ -140,7 +188,7 @@ anchor_left = 1.0
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
-offset_left = -280.0
+offset_left = -368.0
 offset_top = -67.5
 offset_right = -129.0
 offset_bottom = 67.5
